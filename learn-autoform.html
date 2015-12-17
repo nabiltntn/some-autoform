@@ -1,0 +1,50 @@
+<head>
+  <title>learn-autoform</title>
+</head>
+
+<body>
+  <div class="container">
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  
+  {{> insertBookForm}}
+  </div>
+  
+  
+  
+</body>
+
+<template name="hello">
+  
+  
+  
+  
+</template>
+
+
+<template name="insertBookForm">
+  
+  {{> quickForm collection="App.collections.Messages" id="insertBookForm" type="method" meteormethod="addNewMessage"}}
+  
+  
+  <!--
+  {{#autoForm collection="App.collections.Messages" id="insertBookForm" type="insert"}}
+    <fieldset>
+      <legend>Add a message</legend>
+      {{> afQuickField name='content' rows=5}}
+      {{> afQuickField name='arrival'}}
+      {{> afQuickField name='note'}}
+      {{> afQuickField name="married" type="boolean-radios" trueLabel="Yes" falseLabel="No"}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+  -->
+
+  
+  
+  {{#each messages}}
+      {{content}}<br/><hr/>
+  
+  {{/each}}
+</template>
